@@ -3101,7 +3101,7 @@ MonoBehaviour:
   player:
     serializedVersion: 2
     m_Bits: 8
-  savePosition: 0
+  savePosition: 2
 --- !u!33 &614329935
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -4377,7 +4377,7 @@ MonoBehaviour:
   player:
     serializedVersion: 2
     m_Bits: 8
-  savePosition: 0
+  savePosition: 1
 --- !u!33 &875290886
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10332,11 +10332,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2680688636058200023, guid: a7b0c069615a5de409ed0fec69268c62, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000017187991
+      value: -0.000000017187986
       objectReference: {fileID: 0}
     - target: {fileID: 2680688636058200023, guid: a7b0c069615a5de409ed0fec69268c62, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -7.953638e-10
+      value: 7.9536355e-10
       objectReference: {fileID: 0}
     - target: {fileID: 6777954143434636674, guid: a7b0c069615a5de409ed0fec69268c62, type: 3}
       propertyPath: m_Name
