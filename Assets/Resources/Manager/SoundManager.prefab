@@ -46,8 +46,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0dfcee6da78ce3546915024d706d7109, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bgmSource: {fileID: 2315522860339898961}
-  sfxSource: {fileID: 105278731388737427}
+  bgmClips: []
+  bgmVolume: 3
+  bgmChannels: 0
+  sfxClips: []
+  sfxVolume: 3
+  sfxChannels: 0
 --- !u!1 &3112071428299456759
 GameObject:
   m_ObjectHideFlags: 0

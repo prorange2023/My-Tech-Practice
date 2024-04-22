@@ -23,6 +23,9 @@ public class TechScene : MonoBehaviour
                 Monster[2].SetActive(false);
                 break;
             case 2:
+                Monster[0].SetActive(false);
+                Monster[1].SetActive(false);
+                Monster[2].SetActive(false);
                 Monster[3].SetActive(false);
                 Monster[4].SetActive(false);
                 Monster[5].SetActive(false);
