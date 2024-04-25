@@ -4,25 +4,33 @@ using UnityEngine;
 
 public class TechScene : MonoBehaviour
 {
-    [SerializeField] protected List<List<Enemy>> EnemyGroups;
-    [SerializeField] protected List<Enemy> EnemyGroup1;
-    [SerializeField] protected List<Enemy> EnemyGroup2;
+    [SerializeField] protected List<List<Enemy>> enemyGroups;
+    [SerializeField] protected List<Enemy> enemyGroup1;
+    [SerializeField] protected List<Enemy> enemyGroup2;
 
+    [SerializeField] protected int enemyGroupCount;
     private void Start()
     {
+        enemyGroups = new List<List<Enemy>>();
+        enemyGroups.Add(enemyGroup1);
+        enemyGroups.Add(enemyGroup2);
         LoadRespawn();
     }
-
     public void LoadRespawn()
     {
         int savePoint = Manager.Game.savePoint;
-        if (savePoint > 0 && savePoint <= EnemyGroups.Count)
+        if (savePoint > 0)
         {
-            foreach (Enemy enemy in EnemyGroups[savePoint - 1])
+            for (int i = 0; i < savePoint; i++)
             {
-                enemy.gameObject.SetActive(false);
+                Debug.Log(i);
+                foreach (Enemy enemy in enemyGroups[i])
+                {
+                    enemy.gameObject.SetActive(false);
+                }
             }
         }
+        
         //switch (Manager.Game.savePoint)
         //{
         //    case 0:
