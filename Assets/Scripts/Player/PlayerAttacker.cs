@@ -13,10 +13,11 @@ public class PlayerAttacker : MonoBehaviour
     [SerializeField] bool moving;
     [SerializeField] bool activable = true;
 
-    public void OnAttack()
+    public void OnFire()
     {
         if (activable == true)
         {
+            StartCoroutine(fireCoolTime());
             if (Physics.Raycast(attackPoint.position, attackPoint.forward, out RaycastHit hit, attackRange, targetLayerMask))
             {
 
@@ -31,7 +32,7 @@ public class PlayerAttacker : MonoBehaviour
             return;
 
     }
-    IEnumerator attackCoolTime()
+    IEnumerator fireCoolTime()
     {
         activable = false;
         yield return new WaitForSeconds(attackCooltime);

@@ -14,6 +14,7 @@ public class TechScene : MonoBehaviour
         enemyGroups = new List<List<Enemy>>();
         enemyGroups.Add(enemyGroup1);
         enemyGroups.Add(enemyGroup2);
+        enemyGroupCount = enemyGroups.Count;
         LoadRespawn();
     }
     public void LoadRespawn()
