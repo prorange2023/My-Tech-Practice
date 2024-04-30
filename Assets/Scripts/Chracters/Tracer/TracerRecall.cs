@@ -20,7 +20,7 @@ public class TracerRecall : MonoBehaviour
     {
         public Vector3 CharacterPosition;
         public Quaternion CharacterRotation;
-        public Quaternion cameraRotation;
+        //public Quaternion cameraRotation;
     }
 
     [SerializeField] private List<RecallData> recallData = new List<RecallData>();
@@ -33,7 +33,7 @@ public class TracerRecall : MonoBehaviour
     {
         StoreRecallData();
 
-        if (recallData.Count != 0)
+        if (recallData.Count >= 2)
         {
             for (int i = 0; i < recallData.Count - 1; i++)
             {

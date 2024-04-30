@@ -4882,7 +4882,8 @@ MonoBehaviour:
   m_RequiresDepthTextureOption: 2
   m_RequiresOpaqueTextureOption: 2
   m_CameraType: 0
-  m_Cameras: []
+  m_Cameras:
+  - {fileID: 1785641258415606948}
   m_RendererIndex: 1
   m_VolumeLayerMask:
     serializedVersion: 2
@@ -10947,6 +10948,11 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1640542923}
   m_SourcePrefab: {fileID: 100100000, guid: a7b0c069615a5de409ed0fec69268c62, type: 3}
+--- !u!20 &1785641258415606948 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 8534063002234808521, guid: a7b0c069615a5de409ed0fec69268c62, type: 3}
+  m_PrefabInstance: {fileID: 1785641258415606947}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4228651803941736761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10959,13 +10965,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 003dbc8f146187244b459eac4254bb1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Monster:
-  - {fileID: 1042883758}
-  - {fileID: 597634656}
-  - {fileID: 1974374124}
-  - {fileID: 1094716261}
-  - {fileID: 33813768}
-  - {fileID: 279501280}
+  enemyGroup1: []
+  enemyGroup2: []
+  enemyGroupCount: 0
 --- !u!4 &4668596504306293539
 Transform:
   m_ObjectHideFlags: 0

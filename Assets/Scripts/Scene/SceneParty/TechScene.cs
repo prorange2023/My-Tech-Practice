@@ -9,12 +9,16 @@ public class TechScene : MonoBehaviour
     [SerializeField] protected List<Enemy> enemyGroup2;
 
     [SerializeField] protected int enemyGroupCount;
-    private void Start()
+    private void OnEnable()
     {
         enemyGroups = new List<List<Enemy>>();
         enemyGroups.Add(enemyGroup1);
         enemyGroups.Add(enemyGroup2);
         enemyGroupCount = enemyGroups.Count;
+        
+    }
+    private void Start()
+    {
         LoadRespawn();
     }
     public void LoadRespawn()
