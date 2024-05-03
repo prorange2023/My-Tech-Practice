@@ -10,14 +10,13 @@ public class PlayerInterActor : MonoBehaviour
 
 
     Collider[] colliders = new Collider[20];
-    private void OnInterAct(InputValue value)
+    private void OnInterActor(InputValue value)
     {
         Interact();
     }
 
     private void Interact()
     {
-
         int size = Physics.OverlapSphereNonAlloc(transform.position, range, colliders);
         for (int i = 0; i < size; i++)
         {

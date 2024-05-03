@@ -7,6 +7,12 @@ public class PlayerMover : MonoBehaviour
     [SerializeField] CharacterController controller;
     [SerializeField] int moveSpeed;
 
+    [Header("Gravity")]
+    [SerializeField] float _gravity = -9.81f;
+    [SerializeField] float gravityMultyplier = 3.0f;
+    [SerializeField] float _velocity;
+    [SerializeField] Vector3 _direction;
+
     [Header("MouseSpin")]
     [SerializeField] CinemachineFreeLook[] freeLookCams;
     [SerializeField] float rotationSpeedX = 150f;
@@ -85,8 +91,15 @@ public class PlayerMover : MonoBehaviour
         //(scrollValue > 0) // 마우스 휠업
         //(scrollValue < 0) // 마우스 휠 다운
     }
+    private void applyGravity()
+    {
+        controller.Move(transform.forward * moveDir.y * _gravity * Time.deltaTime);
+        //_velocity += _gravity * gravityMultyplier * Time.deltaTime;
+        //_direction.y = _velocity;
+    }
     private void Update()
     {
+        //applyGravity();
         Move();
         Zoom();
     }

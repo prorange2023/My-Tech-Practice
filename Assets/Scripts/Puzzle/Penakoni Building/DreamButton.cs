@@ -5,9 +5,9 @@ using UnityEngine;
 public class PuzzleButton : MonoBehaviour, IInterActable
 {
     public List<PenakoniBuildingPuzzle> buildingPuzzles;
-    private void Dreamer()
+    public void Dreamer()
     {
-        
+        Debug.Log("dreamer");
         foreach (var buildingPuzzle in buildingPuzzles)
         {
             if (buildingPuzzle.puzzleOn == true)
