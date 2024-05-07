@@ -26,7 +26,7 @@ public class Slot : MonoBehaviour, IPointerUpHandler
         bool isUse = item.Use();
         if (isUse)
         {
-            Inventory.instance.RemoveItem();
+            Inventory.instance.RemoveItem(slotnum);
         }
     }
 }

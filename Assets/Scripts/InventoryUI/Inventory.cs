@@ -5,15 +5,15 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     #region Singleton
-    public static Inventory Instance;
+    public static Inventory instance;
     private void Awake()
     {
-        if (Instance != null)
+        if (instance != null)
         {
             Destroy(gameObject);
             return;
         }
-        Instance = this;
+        instance = this;
     }
     #endregion
 
