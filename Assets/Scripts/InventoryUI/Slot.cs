@@ -23,10 +23,18 @@ public class Slot : MonoBehaviour, IPointerUpHandler
 
     public void OnPointerUp(PointerEventData eventData)
     {
-        bool isUse = item.Use();
-        if (isUse)
+        if (Inventory.instance.items.Count == 0)
         {
-            Inventory.instance.RemoveItem(slotnum);
+            return;
         }
+        else
+        {
+            bool isUse = item.Use();
+            if (isUse)
+            {
+                Inventory.instance.RemoveItem(slotnum);
+            }
+        }
+        
     }
 }
