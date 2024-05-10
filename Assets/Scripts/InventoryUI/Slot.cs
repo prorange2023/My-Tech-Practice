@@ -35,6 +35,5 @@ public class Slot : MonoBehaviour, IPointerUpHandler
                 Inventory.instance.RemoveItem(slotnum);
             }
         }
-        
     }
 }
