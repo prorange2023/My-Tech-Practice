@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50cb0dae3323f4843878f1018c45dfa5, type: 3}
   m_Name: SmallEffect
   m_EditorClassIdentifier: 
-  healingPoint: 0
+  healingPoint: 10
