@@ -7,6 +7,7 @@ public class GameController : MonoBehaviour
     public StoryScene currentScene;
     public BottomBarController bottomBar;
     public BackgroundController backgroundController;
+    private List<int> numberList;
 
     private void Start()
     {
@@ -32,5 +33,9 @@ public class GameController : MonoBehaviour
                 }
             }
         }
+    }
+    public void ListExperiment()
+    {
+
     }
 }
