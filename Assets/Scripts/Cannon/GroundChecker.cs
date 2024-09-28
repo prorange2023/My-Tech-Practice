@@ -6,28 +6,45 @@ public class GroundChecker : MonoBehaviour
 {
     [Header("Ground Check")]
     [SerializeField] LayerMask groundLayer;
-    [SerializeField] SphereCollider groundCollider;
-    [SerializeField] float radius;
-    [SerializeField] float distance;
+    [SerializeField] BoxCollider CheckCollider;
+    [SerializeField] bool isGround;
+    public bool IsGround { get { return isGround; } }
 
     [Header("Debug")]
     [SerializeField] bool debug;
 
-    private bool isHit;
-    private Vector3 hitPos;
-    private float hitDistance;
-    private bool isGround;
-
-    private void FixedUpdate()
+    private void Start()
     {
-        
+        //바닥체크용 콜리더의 트리거 속성 켜기
+        CheckCollider.isTrigger = true;
     }
-
-    bool GroundCheck()
+    private void OnTriggerEnter(Collider other)
     {
-        isHit = Physics.SphereCast(transform.position, radius, Vector3.down, out RaycastHit hit, distance, groundLayer);
-        hitPos = hit.point;
-        hitDistance = hit.distance;
-        return isHit;
+        //비트시프트로 바닥레이어 체크
+        if (((1 << other.gameObject.layer) & groundLayer) != 0)
+        {
+            isGround = true;
+        }
+    }
+    private void OnTriggerStay(Collider other)
+    {
+        //비트시프트로 바닥레이어 체크
+        if (((1 << other.gameObject.layer) & groundLayer) != 0)
+        {
+            isGround = true;
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        //비트시프트로 바닥레이어 체크
+        if (((1 << other.gameObject.layer) & groundLayer) != 0)
+        {
+            isGround = false;
+        }
+    }
+    //바닥여부 확인 반환
+    public bool GetIsGround()
+    {
+        return isGround;
     }
 }
