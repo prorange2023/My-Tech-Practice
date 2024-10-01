@@ -34,14 +34,14 @@ public class GroundChecker : MonoBehaviour
             isGround = true;
         }
     }
-    private void OnTriggerExit(Collider other)
-    {
-        //비트시프트로 바닥레이어 체크
-        if (((1 << other.gameObject.layer) & groundLayer) != 0)
-        {
-            isGround = false;
-        }
-    }
+    //private void OnTriggerExit(Collider other)
+    //{
+    //    //비트시프트로 바닥레이어 체크
+    //    if (((1 << other.gameObject.layer) & groundLayer) != 0)
+    //    {
+    //        isGround = false;
+    //    }
+    //}
     //바닥여부 확인 반환
     public bool GetIsGround()
     {
