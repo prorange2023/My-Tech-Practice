@@ -1999,6 +1999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3938ba16bafdcf43a9d7d7ea3981b9c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cannonPredict: {fileID: 1884171222}
   objectToThrow: {fileID: 2408143807147346366, guid: 9906accfaa4f4044682b2d8e644e5c4f, type: 3}
   force: 5
   FirePosition: {fileID: 8150249}
@@ -2032,7 +2033,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hitMarker: {fileID: 1604101457}
-  maxPoints: 50
+  maxPoints: 100
   increment: 0.025
   rayOverlap: 1.1
 --- !u!1 &1935923797
