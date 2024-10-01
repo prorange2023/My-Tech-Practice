@@ -50,7 +50,7 @@ public class CannonPredict : MonoBehaviour
             // Raycast로 표면에 부딪혔는지 확인
             if (Physics.Raycast(position, velocity.normalized, out RaycastHit hit, overlap))
             {
-                // 표면에 부딪혔다면, 라인 렌더러에 부딪힌 지점까지 업데이트하고, 히트 마커를 이동
+                // 표면에 부딪혔다면, 라인 렌더러에 부딪힌 지점까지 업데이트
                 UpdateLineRender(i, (i - 1, hit.point));
                 MoveHitMarker(hit);  // 히트 마커를 표면으로 이동
                 break;  // 표면에 부딪히면 포물선 그리기를 중단
@@ -64,11 +64,12 @@ public class CannonPredict : MonoBehaviour
     }
 
     /// <summary>
-    /// 라인 포인트의 수와 개별 포인트 위치를 동시에 설정할 수 있는 함수
+    /// 라인 포인트의 수와 개별 포인트 위치를 동시에 설정할 수 있는 함수ㅋ
     /// </summary>
     /// <param name="count">라인에 있는 포인트의 개수</param>
     /// <param name="pointPos">개별 포인트의 인덱스와 위치</param>
-    private void UpdateLineRender(int count, (int point, Vector3 pos) pointPos)
+    /// 튜플
+    private void UpdateLineRender(int count, (int point, Vector3 pos) pointPos) 
     {
         trajectory.positionCount = count;  // 라인 포인트의 개수를 설정
         trajectory.SetPosition(pointPos.point, pointPos.pos);  // 특정 포인트의 위치를 설정
@@ -79,7 +80,7 @@ public class CannonPredict : MonoBehaviour
         // 중력의 영향을 받도록 속도를 갱신
         velocity += Physics.gravity * increment;
 
-        // 드래그를 적용하여 속도를 감소 (0에서 1 사이 값으로 클램프)
+        // 공기저항을 적용하여 속도를 감소 (0에서 1 사이 값으로)
         velocity *= Mathf.Clamp01(1f - drag * increment);
         return velocity;  // 갱신된 속도를 반환
     }
@@ -87,6 +88,7 @@ public class CannonPredict : MonoBehaviour
     private void MoveHitMarker(RaycastHit hit)
     {
         // 히트 마커를 활성화하여 부딪힌 표면을 표시
+        // 임시 비활성화, 궤적 표시용 구체로 충돌 꺼서 사용 가능하지만 보기 안좋음
         hitMarker.gameObject.SetActive(false);
 
         // 표면으로부터 약간 떨어진 위치에 마커를 배치

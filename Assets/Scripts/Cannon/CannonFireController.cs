@@ -26,7 +26,7 @@ public class CannonFireController : MonoBehaviour
         if (FirePosition == null)
             FirePosition = transform;
 
-        // fire InputAction을 활성화하고, performed 이벤트에 ThrowObject 메서드를 연결
+        // fire InputAction을 활성화하고, performed 이벤트에 ThrowObject 메서드를 연결, 업데이트 에서 감지보다 메모리 덜먹음
         fire.Enable();
         fire.performed += ThrowObject;
     }
@@ -35,6 +35,11 @@ public class CannonFireController : MonoBehaviour
     {
         // 매 프레임마다 궤적을 예측
         Predict();
+        // 이건 CPU 사용량이 많음
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    ThrowObject();
+        //}
     }
 
     void Predict()
@@ -43,6 +48,7 @@ public class CannonFireController : MonoBehaviour
         cannonPredict.PredictTrajectory(ProjectileData());
     }
 
+    //데이터값 입력하는 함수
     ProjectileProperties ProjectileData()
     {
         // 포탄의 속성 정보를 담는 ProjectileProperties 객체 생성
