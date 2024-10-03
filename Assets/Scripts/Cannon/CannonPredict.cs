@@ -9,7 +9,7 @@ public class CannonPredict : MonoBehaviour
     [SerializeField, Tooltip("The marker will show where the projectile will hit")]
     Transform hitMarker;
     [SerializeField, Range(10, 100), Tooltip("The maximum number of points the LineRenderer can have")]
-    int maxPoints = 50;
+    int maxPoints = 50; // 길이라고 생각하면 됨
     [SerializeField, Range(0.01f, 0.5f), Tooltip("The time increment used to calculate the trajectory")]
     float increment = 0.025f;
     [SerializeField, Range(1.05f, 2f), Tooltip("The raycast overlap between points in the trajectory, this is a multiplier of the length between points. 2 = twice as long")]

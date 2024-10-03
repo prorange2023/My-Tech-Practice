@@ -12,7 +12,7 @@ public class TracerRecall : MonoBehaviour
     [SerializeField] private float recallCooltime = 7f;  // 되돌리기 후 쿨타임 (초)
     [SerializeField] private float recallCost = 1f;  // 되돌리기를 위한 비용, 여기서는 기본값 1로 설정
 
-    // 플레이어 카메라 컨트롤러 (주석 처리되어 있으므로 사용하지 않음)
+    // 플레이어 카메라 컨트롤러
     // private PlayerCameraController playerCameraController;
 
     private bool canCollectRecallData = true;  // 위치 데이터를 저장할 수 있는지 여부
@@ -23,14 +23,14 @@ public class TracerRecall : MonoBehaviour
     {
         public Vector3 CharacterPosition;  // 캐릭터의 위치
         public Quaternion CharacterRotation;  // 캐릭터의 회전
-                                              // public Quaternion cameraRotation;  // 카메라의 회전 (현재는 주석 처리됨)
+        // public Quaternion cameraRotation;  // 카메라의 회전
     }
 
     [SerializeField] private List<RecallData> recallData = new List<RecallData>();  // 위치와 회전 데이터를 저장하는 리스트
 
     private void Start()
     {
-        // 플레이어 카메라 컨트롤러를 초기화 (현재 주석 처리됨)
+        // 플레이어 카메라 컨트롤러를 초기화
         // playerCameraController = GetComponent<PlayerCameraController>();
     }
 
@@ -114,7 +114,7 @@ public class TracerRecall : MonoBehaviour
             Quaternion currentDataPlayerStartRotation = transform.rotation;
             // Quaternion currentDataCameraStartRotation = playerCameraController.transform.rotation;
 
-            // 되돌리기 작업을 수행 (데이터가 있을 때까지 반복)
+            // 되돌리기 작업을 수행 (데이터가 있을 동안 반복)
             while (recallData.Count > 0)
             {
                 float t = 0f;  // 이동할 시간의 비율을 계산
@@ -128,7 +128,7 @@ public class TracerRecall : MonoBehaviour
                     // 현재 회전에서 이전에 저장된 회전으로 회전
                     transform.rotation = Quaternion.Lerp(currentDataPlayerStartRotation, recallData[recallData.Count - 1].CharacterRotation, t / secondsForEachData);
 
-                    // 카메라 회전을 변경하는 작업 (주석 처리됨)
+                    // 카메라 회전을 변경하는 작업
                     // playerCameraController.transform.rotation = Quaternion.Lerp(currentDataCameraStart, recallData[recallData.Count - 1].cameraRotation, t / secondsForEachData);
 
                     t += Time.deltaTime;  // 시간을 증가시킴

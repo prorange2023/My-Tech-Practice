@@ -2002,7 +2002,7 @@ MonoBehaviour:
   cannonPredict: {fileID: 1884171222}
   objectToThrow: {fileID: 2408143807147346366, guid: 9906accfaa4f4044682b2d8e644e5c4f, type: 3}
   force: 5
-  FirePosition: {fileID: 8150249}
+  firePosition: {fileID: 8150249}
   fire:
     m_Name: Fire
     m_Type: 0
